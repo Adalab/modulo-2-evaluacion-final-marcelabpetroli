@@ -68,9 +68,11 @@ function renderTemplate(element, classFav) {
   const imageElement = document.createElement('img');
   const nameElement = document.createElement('h3');
   const statusElement = document.createElement('p');
+  const occupationElement = document.createElement('p');
 
   const title = document.createTextNode(element.name);
   const status = document.createTextNode(element.status);
+  const occupationElText = document.createTextNode(element.occupation);
 
   articleElement.setAttribute('class', `js_characters article-character ${classFav}`);
   articleElement.setAttribute('id', element.char_id);
@@ -84,10 +86,12 @@ function renderTemplate(element, classFav) {
 
   nameElement.appendChild(title);
   statusElement.appendChild(status);
+  occupationElement.appendChild(occupationElText);
   imageContainer.appendChild(imageElement);
   articleElement.appendChild(imageContainer);
   articleElement.appendChild(nameElement);
   articleElement.appendChild(statusElement);
+  articleElement.appendChild(occupationElement);
 
   articleElement.addEventListener('click', handleClickCharacter);
   return articleElement;
